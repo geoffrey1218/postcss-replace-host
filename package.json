@@ -12,7 +12,7 @@
   "scripts": {
     "test": "jest && eslint *.js"
   },
-  "author": "Geoff Rich <geoff.rich@alaskaair.com>",
+  "author": "Geoff Rich",
   "license": "MIT",
   "repository": "geoffrey1218/postcss-replace-host",
   "bugs": {

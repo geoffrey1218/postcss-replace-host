@@ -9,10 +9,17 @@ function run (input, output, opts) {
   })
 }
 
-/* Write tests here
-
-it('does something', function () {
-  return run('a{ }', 'a{ }', { })
+it('replaces :host with the given class', function () {
+  return run(':host{ }', '.test-class{ }', { class: 'test-class' })
 })
 
-*/
+it('replaces :host and removes parentheses', function () {
+  return run(
+    ':host(:not(.is-touching)){ }',
+    '.test-class:not(.is-touching){ }',
+    { class: 'test-class' })
+})
+
+it('throws error when class not provided', function () {
+  return expect(function () { run('', '', { }) }).toThrow()
+})
